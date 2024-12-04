@@ -48,7 +48,7 @@ export default class Slide {
   }
 
   changeSlideOnEnd() {
-    if (this.dist.movement > 120 && this.next !== undefined) {
+    if (this.dist.movement > 120 && this.index.next !== undefined) {
       this.activeNextSlide();
     } else if (this.dist.movement < -120 && this.index.prev !== undefined) {
       this.activePrevSlide();
@@ -101,10 +101,11 @@ export default class Slide {
   }
 
   activePrevSlide() {
-    if (this.index.prev !== undefined) {this.changeSlide(this.index.prev)}
+    if (this.index.prev !== undefined) this.changeSlide(this.index.prev);
   }
+
   activeNextSlide() {
-    if (this.index.next !== undefined) {this.changeSlide(this.index.next)}
+    if (this.index.next !== undefined) this.changeSlide(this.index.next);
   }
 
   init() {
